@@ -49,7 +49,7 @@ class StepSliderView: UIView {
             
             var thumbCenterX: CGFloat = 0
             var thumbCenterY: CGFloat = 0
-            var thumbOffset: CGFloat = 0
+            var offset: CGFloat = 0
             
             let trackRect = slider.trackRect(forBounds: slider.bounds)
             let thumbRect = slider.thumbRect(forBounds: slider.bounds,
@@ -57,14 +57,14 @@ class StepSliderView: UIView {
                                              value: Float(tickIndex))
             switch tickIndex {
             case Int(slider.minimumValue):
-                thumbOffset = (thumbRect.width / 2)
+                offset = (thumbRect.width / 2)
             case Int(slider.maximumValue):
-                thumbOffset = -(thumbRect.width / 2)
+                offset = -(thumbRect.width / 2)
             default:
-                thumbOffset = 0.0
+                offset = 0.0
             }
-            thumbCenterX = thumbOffset + CGFloat(Double(tickIndex) * stepWidth) - CGFloat(5.0 / 2)
-            thumbCenterY = thumbOffset - CGFloat(5.0 / 2)
+            thumbCenterX = offset + CGFloat(Double(tickIndex) * stepWidth) - CGFloat(5.0 / 2)
+            thumbCenterY = offset - CGFloat(5.0 / 2)
             let sliderDotView = UIView(frame: CGRect(x: thumbCenterX,
                                                      y: thumbCenterY,
                                                      width: 5.0,
