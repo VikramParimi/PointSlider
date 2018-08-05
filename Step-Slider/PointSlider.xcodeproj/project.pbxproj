@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB7913D62114512F002D3021 /* PointSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7913D52114512F002D3021 /* PointSlider.swift */; };
+		FB7913D821145E48002D3021 /* PointSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7913D721145E48002D3021 /* PointSliderView.swift */; };
 		FBA240EF2112EBA60018D667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA240EE2112EBA60018D667 /* AppDelegate.swift */; };
 		FBA240F12112EBA60018D667 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA240F02112EBA60018D667 /* ViewController.swift */; };
 		FBA240F42112EBA60018D667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA240F22112EBA60018D667 /* Main.storyboard */; };
 		FBA240F62112EBA90018D667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA240F52112EBA90018D667 /* Assets.xcassets */; };
 		FBA240F92112EBA90018D667 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA240F72112EBA90018D667 /* LaunchScreen.storyboard */; };
-		FBA241042112EBA90018D667 /* Step_SliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA241032112EBA90018D667 /* Step_SliderTests.swift */; };
-		FBA2410F2112EC9E0018D667 /* StepSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2410E2112EC9E0018D667 /* StepSliderView.swift */; };
-		FBA241112112ECF60018D667 /* StepSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA241102112ECF60018D667 /* StepSliderView.xib */; };
+		FBA241042112EBA90018D667 /* PointSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA241032112EBA90018D667 /* PointSliderTests.swift */; };
+		FBA241112112ECF60018D667 /* PointSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA241102112ECF60018D667 /* PointSliderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,18 +29,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FBA240EB2112EBA60018D667 /* Step-Slider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Step-Slider.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB7913D52114512F002D3021 /* PointSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointSlider.swift; sourceTree = "<group>"; };
+		FB7913D721145E48002D3021 /* PointSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointSliderView.swift; sourceTree = "<group>"; };
+		FBA240EB2112EBA60018D667 /* PointSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PointSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA240EE2112EBA60018D667 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBA240F02112EBA60018D667 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FBA240F32112EBA60018D667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBA240F52112EBA90018D667 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBA240F82112EBA90018D667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBA240FA2112EBA90018D667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBA240FF2112EBA90018D667 /* Step-SliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Step-SliderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBA241032112EBA90018D667 /* Step_SliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step_SliderTests.swift; sourceTree = "<group>"; };
+		FBA240FF2112EBA90018D667 /* PointSliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PointSliderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBA241032112EBA90018D667 /* PointSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointSliderTests.swift; sourceTree = "<group>"; };
 		FBA241052112EBA90018D667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBA2410E2112EC9E0018D667 /* StepSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSliderView.swift; sourceTree = "<group>"; };
-		FBA241102112ECF60018D667 /* StepSliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepSliderView.xib; sourceTree = "<group>"; };
+		FBA241102112ECF60018D667 /* PointSliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointSliderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +65,8 @@
 		FBA240E22112EBA60018D667 = {
 			isa = PBXGroup;
 			children = (
-				FBA240ED2112EBA60018D667 /* Step-Slider */,
-				FBA241022112EBA90018D667 /* Step-SliderTests */,
+				FBA240ED2112EBA60018D667 /* PointSlider */,
+				FBA241022112EBA90018D667 /* PointSliderTests */,
 				FBA240EC2112EBA60018D667 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,42 +74,43 @@
 		FBA240EC2112EBA60018D667 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBA240EB2112EBA60018D667 /* Step-Slider.app */,
-				FBA240FF2112EBA90018D667 /* Step-SliderTests.xctest */,
+				FBA240EB2112EBA60018D667 /* PointSlider.app */,
+				FBA240FF2112EBA90018D667 /* PointSliderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FBA240ED2112EBA60018D667 /* Step-Slider */ = {
+		FBA240ED2112EBA60018D667 /* PointSlider */ = {
 			isa = PBXGroup;
 			children = (
 				FBA240EE2112EBA60018D667 /* AppDelegate.swift */,
 				FBA240F02112EBA60018D667 /* ViewController.swift */,
-				FBA2410E2112EC9E0018D667 /* StepSliderView.swift */,
-				FBA241102112ECF60018D667 /* StepSliderView.xib */,
+				FB7913D721145E48002D3021 /* PointSliderView.swift */,
+				FB7913D52114512F002D3021 /* PointSlider.swift */,
+				FBA241102112ECF60018D667 /* PointSliderView.xib */,
 				FBA240F22112EBA60018D667 /* Main.storyboard */,
 				FBA240F52112EBA90018D667 /* Assets.xcassets */,
 				FBA240F72112EBA90018D667 /* LaunchScreen.storyboard */,
 				FBA240FA2112EBA90018D667 /* Info.plist */,
 			);
-			path = "Step-Slider";
+			path = PointSlider;
 			sourceTree = "<group>";
 		};
-		FBA241022112EBA90018D667 /* Step-SliderTests */ = {
+		FBA241022112EBA90018D667 /* PointSliderTests */ = {
 			isa = PBXGroup;
 			children = (
-				FBA241032112EBA90018D667 /* Step_SliderTests.swift */,
+				FBA241032112EBA90018D667 /* PointSliderTests.swift */,
 				FBA241052112EBA90018D667 /* Info.plist */,
 			);
-			path = "Step-SliderTests";
+			path = PointSliderTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FBA240EA2112EBA60018D667 /* Step-Slider */ = {
+		FBA240EA2112EBA60018D667 /* PointSlider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FBA241082112EBA90018D667 /* Build configuration list for PBXNativeTarget "Step-Slider" */;
+			buildConfigurationList = FBA241082112EBA90018D667 /* Build configuration list for PBXNativeTarget "PointSlider" */;
 			buildPhases = (
 				FBA240E72112EBA60018D667 /* Sources */,
 				FBA240E82112EBA60018D667 /* Frameworks */,
@@ -117,14 +120,14 @@
 			);
 			dependencies = (
 			);
-			name = "Step-Slider";
+			name = PointSlider;
 			productName = "Step-Slider";
-			productReference = FBA240EB2112EBA60018D667 /* Step-Slider.app */;
+			productReference = FBA240EB2112EBA60018D667 /* PointSlider.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FBA240FE2112EBA90018D667 /* Step-SliderTests */ = {
+		FBA240FE2112EBA90018D667 /* PointSliderTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FBA2410B2112EBA90018D667 /* Build configuration list for PBXNativeTarget "Step-SliderTests" */;
+			buildConfigurationList = FBA2410B2112EBA90018D667 /* Build configuration list for PBXNativeTarget "PointSliderTests" */;
 			buildPhases = (
 				FBA240FB2112EBA90018D667 /* Sources */,
 				FBA240FC2112EBA90018D667 /* Frameworks */,
@@ -135,9 +138,9 @@
 			dependencies = (
 				FBA241012112EBA90018D667 /* PBXTargetDependency */,
 			);
-			name = "Step-SliderTests";
+			name = PointSliderTests;
 			productName = "Step-SliderTests";
-			productReference = FBA240FF2112EBA90018D667 /* Step-SliderTests.xctest */;
+			productReference = FBA240FF2112EBA90018D667 /* PointSliderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -159,7 +162,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FBA240E62112EBA60018D667 /* Build configuration list for PBXProject "Step-Slider" */;
+			buildConfigurationList = FBA240E62112EBA60018D667 /* Build configuration list for PBXProject "PointSlider" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -172,8 +175,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FBA240EA2112EBA60018D667 /* Step-Slider */,
-				FBA240FE2112EBA90018D667 /* Step-SliderTests */,
+				FBA240EA2112EBA60018D667 /* PointSlider */,
+				FBA240FE2112EBA90018D667 /* PointSliderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -185,7 +188,7 @@
 			files = (
 				FBA240F92112EBA90018D667 /* LaunchScreen.storyboard in Resources */,
 				FBA240F62112EBA90018D667 /* Assets.xcassets in Resources */,
-				FBA241112112ECF60018D667 /* StepSliderView.xib in Resources */,
+				FBA241112112ECF60018D667 /* PointSliderView.xib in Resources */,
 				FBA240F42112EBA60018D667 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,8 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBA2410F2112EC9E0018D667 /* StepSliderView.swift in Sources */,
 				FBA240F12112EBA60018D667 /* ViewController.swift in Sources */,
+				FB7913D62114512F002D3021 /* PointSlider.swift in Sources */,
+				FB7913D821145E48002D3021 /* PointSliderView.swift in Sources */,
 				FBA240EF2112EBA60018D667 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,7 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBA241042112EBA90018D667 /* Step_SliderTests.swift in Sources */,
+				FBA241042112EBA90018D667 /* PointSliderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +227,7 @@
 /* Begin PBXTargetDependency section */
 		FBA241012112EBA90018D667 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FBA240EA2112EBA60018D667 /* Step-Slider */;
+			target = FBA240EA2112EBA60018D667 /* PointSlider */;
 			targetProxy = FBA241002112EBA90018D667 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -367,7 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Step-Slider/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/PointSlider/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,7 +388,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Step-Slider/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/PointSlider/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,7 +416,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Step-Slider.app/Step-Slider";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PointSlider.app/PointSlider";
 			};
 			name = Debug;
 		};
@@ -432,14 +436,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Step-Slider.app/Step-Slider";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PointSlider.app/PointSlider";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FBA240E62112EBA60018D667 /* Build configuration list for PBXProject "Step-Slider" */ = {
+		FBA240E62112EBA60018D667 /* Build configuration list for PBXProject "PointSlider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBA241062112EBA90018D667 /* Debug */,
@@ -448,7 +452,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FBA241082112EBA90018D667 /* Build configuration list for PBXNativeTarget "Step-Slider" */ = {
+		FBA241082112EBA90018D667 /* Build configuration list for PBXNativeTarget "PointSlider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBA241092112EBA90018D667 /* Debug */,
@@ -457,7 +461,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FBA2410B2112EBA90018D667 /* Build configuration list for PBXNativeTarget "Step-SliderTests" */ = {
+		FBA2410B2112EBA90018D667 /* Build configuration list for PBXNativeTarget "PointSliderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBA2410C2112EBA90018D667 /* Debug */,

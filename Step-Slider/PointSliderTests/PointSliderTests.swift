@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import Step_Slider
+@testable import PointSlider
 
-class Step_SliderTests: XCTestCase {
+class PointSliderTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
