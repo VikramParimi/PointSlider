@@ -21,6 +21,7 @@ class PointSliderView: UIView {
         let view =  viewFromNib()
         view.frame = bounds
         addSubview(view)
+        slider.addTarget(self, action: #selector(sliderValueChanged(slider:forEvent:)), for: .valueChanged)
     }
     
     func viewFromNib() -> UIView {

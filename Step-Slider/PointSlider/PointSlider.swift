@@ -11,7 +11,8 @@ import UIKit
 class PointSlider: UISlider {
     
     var pathHeight: CGFloat = 1
-    var tickColor: UIColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+    var tickColor: UIColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+    var isTickRounded: Bool = true
  
     var pathLeftOffset: CGFloat {
         let rect = rectForValue(minimumValue)
@@ -27,9 +28,9 @@ class PointSlider: UISlider {
     var tickWidth: Double {
         return Double(pathWidth) / Double(ticks)
     }
-//    var tickDistance: Double {
-//        return
-//    }
+    var tickDistance: Double {
+        return Double(pathWidth) / Double(ticks)
+    }
     var ticks: Int {
         return Int(maximumValue - minimumValue)
     }
@@ -37,6 +38,12 @@ class PointSlider: UISlider {
     override func draw(_ rect: CGRect) {
         drawPath()
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        thumbTintColor = #colorLiteral(red: 0.03802147337, green: 0.2730069832, blue: 0.7422717611, alpha: 1)
+    }
+    
     private func rectForValue(_ value: Float) -> CGRect {
         let trackRect = self.trackRect(forBounds: bounds)
         let rect = thumbRect(forBounds: bounds, trackRect: trackRect, value: value)
@@ -53,7 +60,7 @@ class PointSlider: UISlider {
         setMaximumTrackImage(transparentImage, for: .normal)
         setMinimumTrackImage(transparentImage, for: .normal)
         
-        context?.setFillColor(#colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1))
+        context?.setFillColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
         
         let pathX = pathLeftOffset
         let pathY = bounds.midY - CGFloat(1/2)
@@ -70,42 +77,36 @@ class PointSlider: UISlider {
         context?.setFillColor(tickColor.cgColor)
         
         for index in 0...ticks {
-            var offSet: CGFloat = 0
+            var offset: CGFloat = 0
             switch index {
             case Int(minimumValue):
-                offSet = pathLeftOffset
+                offset = pathLeftOffset
+                isTickRounded = false
             case Int(maximumValue):
-                offSet = -pathRightOffset
+                offset = -pathRightOffset
+                isTickRounded = false
             default:
+                isTickRounded = true
                 break
             }
-        }
-    }
-    
-    func addTickMarks() {
-     //   slider.addTarget(self, action: #selector(sliderValueChanged(slider:forEvent:)), for: .valueChanged)
-        for tickIndex in 0...ticks {
             
-            var thumbCenterX: CGFloat = 0
-            var thumbCenterY: CGFloat = 0
-            var offSet: CGFloat = 0
-            switch tickIndex {
-            case Int(minimumValue):
-                offSet = pathLeftOffset
-            case Int(maximumValue):
-                offSet = -pathRightOffset
-            default:
-                offSet = 0.0
+            let x = offset + CGFloat(Double(index) * tickWidth) - CGFloat(5 / 2)
+            let y = bounds.midY - CGFloat(5 / 2)
+            
+            let stepPath: UIBezierPath
+            let rect = CGRect(x: x, y: y, width: CGFloat(5), height: CGFloat(5))
+            
+            if isTickRounded {
+                let radius = CGFloat(5/2)
+                stepPath = UIBezierPath(roundedRect: rect, cornerRadius: radius)
+            } else {
+                let x = offset + CGFloat(Double(index) * tickWidth) - CGFloat(1 / 2)
+                let y = bounds.midY - CGFloat(20 / 2)
+                stepPath = UIBezierPath(rect: CGRect(x: x, y: y, width: CGFloat(1), height: CGFloat(20)))
             }
-            thumbCenterX = offSet + CGFloat(Double(tickIndex) * tickWidth) - CGFloat(5.0 / 2)
-            thumbCenterY = offSet - CGFloat(5.0 / 2)
-            let sliderDotView = UIView(frame: CGRect(x: thumbCenterX,
-                                                     y: thumbCenterY,
-                                                     width: 5.0,
-                                                     height: 5.0))
-            sliderDotView.layer.cornerRadius = 2.5
-            sliderDotView.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-            addSubview(sliderDotView)
+            
+            context?.addPath(stepPath.cgPath)
+            context?.fillPath()
         }
     }
 }
