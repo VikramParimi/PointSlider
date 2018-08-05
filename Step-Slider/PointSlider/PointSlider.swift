@@ -1,6 +1,6 @@
 //
-//  StepSlider.swift
-//  Step-Slider
+//  PointSlider.swift
+//  PointSlider
 //
 //  Created by Pairmi, Vikram (US - Bengaluru) on 8/3/18.
 //  Copyright © 2018 vikram. All rights reserved.
@@ -27,9 +27,9 @@ class PointSlider: UISlider {
     var tickWidth: Double {
         return Double(pathWidth) / Double(ticks)
     }
-    var tickDistance: Double {
-        return
-    }
+//    var tickDistance: Double {
+//        return
+//    }
     var ticks: Int {
         return Int(maximumValue - minimumValue)
     }
@@ -88,17 +88,17 @@ class PointSlider: UISlider {
             
             var thumbCenterX: CGFloat = 0
             var thumbCenterY: CGFloat = 0
-            
+            var offSet: CGFloat = 0
             switch tickIndex {
             case Int(minimumValue):
-                offset = pathLeftOffset
+                offSet = pathLeftOffset
             case Int(maximumValue):
-                offset = -pathRightOffset
+                offSet = -pathRightOffset
             default:
-                offset = 0.0
+                offSet = 0.0
             }
-            thumbCenterX = offset + CGFloat(Double(tickIndex) * tickWidth) - CGFloat(5.0 / 2)
-            thumbCenterY = offset - CGFloat(5.0 / 2)
+            thumbCenterX = offSet + CGFloat(Double(tickIndex) * tickWidth) - CGFloat(5.0 / 2)
+            thumbCenterY = offSet - CGFloat(5.0 / 2)
             let sliderDotView = UIView(frame: CGRect(x: thumbCenterX,
                                                      y: thumbCenterY,
                                                      width: 5.0,

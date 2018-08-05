@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Step-Slider
+//  PointSlider
 //
 //  Created by Pairmi, Vikram (US - Bengaluru) on 8/2/18.
 //  Copyright © 2018 vikram. All rights reserved.
