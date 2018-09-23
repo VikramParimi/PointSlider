@@ -25,9 +25,6 @@ import UIKit
     var pathWidth: CGFloat {
         return self.bounds.size.width
     }
-    var tickDistance: Double {
-        return Double(pathWidth) / Double(ticks)
-    }
     var ticks: Int {
         return Int(maximumValue - minimumValue)
     }
@@ -74,13 +71,8 @@ import UIKit
         context?.setFillColor(tickColor.cgColor)
         
         for index in 0...ticks {
-            var offset: CGFloat = 0
             switch index {
-            case Int(minimumValue):
-                offset = pathLeftOffset
-                isTickRounded = false
-            case Int(maximumValue):
-                offset = -pathRightOffset
+            case Int(minimumValue), Int(maximumValue):
                 isTickRounded = false
             default:
                 isTickRounded = true
@@ -89,8 +81,8 @@ import UIKit
             
             let stepPath: UIBezierPath
             
+            let thumbRect = rectForValue(Float(index))
             if isTickRounded {
-                let thumbRect = rectForValue(Float(index))
                 let x = thumbRect.midX - CGFloat(5 / 2)
                 let y = bounds.midY - CGFloat(5 / 2)
                 let rect = CGRect(x: x, y: y, width: CGFloat(5), height: CGFloat(5))
@@ -98,7 +90,7 @@ import UIKit
                 let radius = CGFloat(5/2)
                 stepPath = UIBezierPath(roundedRect: rect, cornerRadius: radius)
             } else {
-                let x = offset + CGFloat(Double(index) * tickDistance) - CGFloat(1 / 2)
+                let x =  thumbRect.midX - CGFloat(1 / 2)
                 let y = bounds.midY - CGFloat(20 / 2)
                 stepPath = UIBezierPath(rect: CGRect(x: x, y: y, width: CGFloat(1), height: CGFloat(20)))
             }
