@@ -25,9 +25,6 @@ class PointSlider: UISlider {
     var pathWidth: CGFloat {
         return self.bounds.size.width
     }
-    var tickWidth: Double {
-        return Double(pathWidth) / Double(ticks)
-    }
     var tickDistance: Double {
         return Double(pathWidth) / Double(ticks)
     }
@@ -90,7 +87,7 @@ class PointSlider: UISlider {
                 break
             }
             
-            let x = offset + CGFloat(Double(index) * tickWidth) - CGFloat(5 / 2)
+            let x = offset + CGFloat(Double(index) * tickDistance) - CGFloat(5 / 2)
             let y = bounds.midY - CGFloat(5 / 2)
             
             let stepPath: UIBezierPath
@@ -100,7 +97,7 @@ class PointSlider: UISlider {
                 let radius = CGFloat(5/2)
                 stepPath = UIBezierPath(roundedRect: rect, cornerRadius: radius)
             } else {
-                let x = offset + CGFloat(Double(index) * tickWidth) - CGFloat(1 / 2)
+                let x = offset + CGFloat(Double(index) * tickDistance) - CGFloat(1 / 2)
                 let y = bounds.midY - CGFloat(20 / 2)
                 stepPath = UIBezierPath(rect: CGRect(x: x, y: y, width: CGFloat(1), height: CGFloat(20)))
             }

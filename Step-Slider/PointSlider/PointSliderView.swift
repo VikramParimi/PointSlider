@@ -22,6 +22,8 @@ class PointSliderView: UIView {
         view.frame = bounds
         addSubview(view)
         slider.addTarget(self, action: #selector(sliderValueChanged(slider:forEvent:)), for: .valueChanged)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(sliderTapped(gestureRecognizer:)))
+        slider.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func viewFromNib() -> UIView {
@@ -31,7 +33,7 @@ class PointSliderView: UIView {
         return view
     }
     
-    @objc func sliderValueChanged(slider: UISlider, forEvent: UIEvent) {
+    @objc private func sliderValueChanged(slider: UISlider, forEvent: UIEvent) {
         if let touchEvent = forEvent.allTouches?.first {
             switch touchEvent.phase {
             case .began:
@@ -41,11 +43,26 @@ class PointSliderView: UIView {
             case .stationary:
                 break
             case .ended:
-                slider.setValue(Float(lroundf(slider.value)), animated: true)
+                UIView.animate(withDuration: 0.75, animations: {() in
+                    self.slider.setValue(Float(lroundf(slider.value)), animated: true)
+                })
             case .cancelled:
                 break
             }
         }
         
+    }
+    
+    @objc private func sliderTapped(gestureRecognizer: UIGestureRecognizer) {
+        
+        let pointTapped: CGPoint = gestureRecognizer.location(in: self)
+        
+        let positionOfSlider: CGPoint = slider.frame.origin
+        let widthOfSlider: CGFloat = slider.frame.size.width
+        let newValue = Float((pointTapped.x - positionOfSlider.x) * CGFloat(slider.maximumValue) / widthOfSlider)
+        
+        UIView.animate(withDuration: 0.75, animations: {() in
+            self.slider.setValue(Float(lroundf(newValue)), animated: true)
+        })
     }
 }
