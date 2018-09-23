@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PointSliderView: UIView {
+@IBDesignable class PointSliderView: UIView {
     
     @IBOutlet weak var slider: PointSlider!
     
@@ -17,9 +17,16 @@ class PointSliderView: UIView {
         setup()
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
     func setup() {
         let view =  viewFromNib()
         view.frame = bounds
+        // Make the view stretch with containing view
+        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         addSubview(view)
         slider.addTarget(self, action: #selector(sliderValueChanged(slider:forEvent:)), for: .valueChanged)
     }
