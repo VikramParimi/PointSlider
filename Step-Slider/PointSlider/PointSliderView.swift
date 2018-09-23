@@ -8,12 +8,17 @@
 
 import UIKit
 
-class PointSliderView: UIView {
+@IBDesignable class PointSliderView: UIView {
     
     @IBOutlet weak var slider: PointSlider!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setup()
     }
     

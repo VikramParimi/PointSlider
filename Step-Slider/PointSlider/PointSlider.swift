@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PointSlider: UISlider {
+@IBDesignable class PointSlider: UISlider {
     
     var pathHeight: CGFloat = 1
     var tickColor: UIColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -87,13 +87,14 @@ class PointSlider: UISlider {
                 break
             }
             
-            let x = offset + CGFloat(Double(index) * tickDistance) - CGFloat(5 / 2)
-            let y = bounds.midY - CGFloat(5 / 2)
-            
             let stepPath: UIBezierPath
-            let rect = CGRect(x: x, y: y, width: CGFloat(5), height: CGFloat(5))
             
             if isTickRounded {
+                let thumbRect = rectForValue(Float(index))
+                let x = thumbRect.midX - CGFloat(5 / 2)
+                let y = bounds.midY - CGFloat(5 / 2)
+                let rect = CGRect(x: x, y: y, width: CGFloat(5), height: CGFloat(5))
+                
                 let radius = CGFloat(5/2)
                 stepPath = UIBezierPath(roundedRect: rect, cornerRadius: radius)
             } else {
