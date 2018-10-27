@@ -66,8 +66,6 @@ import UIKit
         context?.addPath(path.cgPath)
         context?.fillPath()
         
-        //Draw Tickpoints
-        
         context?.setFillColor(tickColor.cgColor)
         
         for index in 0...ticks {

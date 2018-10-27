@@ -22,7 +22,7 @@ import UIKit
         setup()
     }
     
-    func setup() {
+    private func setup() {
         let view =  viewFromNib()
         view.frame = bounds
         addSubview(view)
@@ -31,7 +31,7 @@ import UIKit
         slider.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    func viewFromNib() -> UIView {
+    private func viewFromNib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
@@ -62,9 +62,9 @@ import UIKit
         
         let pointTapped: CGPoint = gestureRecognizer.location(in: self)
         
-        let positionOfSlider: CGPoint = slider.frame.origin
-        let widthOfSlider: CGFloat = slider.frame.size.width
-        let newValue = Float((pointTapped.x - positionOfSlider.x) * CGFloat(slider.maximumValue) / widthOfSlider)
+        let sliderPosition: CGPoint = slider.frame.origin
+        let sliderWidth: CGFloat = slider.frame.size.width
+        let newValue = Float((pointTapped.x - sliderPosition.x) * CGFloat(slider.maximumValue) / sliderWidth)
         
         UIView.animate(withDuration: 0.75, animations: {() in
             self.slider.setValue(Float(lroundf(newValue)), animated: true)
